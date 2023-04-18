@@ -4,34 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GPA">
+    tools:context=".GPA"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/No_of_subjects"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="239dp"
+        android:layout_height="85dp"
         android:layout_marginEnd="40dp"
 
-        android:text="@string/NOofSubjects"
         android:padding="16dp"
+        android:text="@string/NOofSubjects"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="89dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="52dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/No_of_subjects"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/subjectsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" > // Add this line to specify top constraint
+    app:layout_constraintBottom_toBottomOf="parent"  // Add this line to specify bottom constraint
+    app:layout_constraintStart_toStartOf="parent"  // Add this line to specify start (left) constraint
+    app:layout_constraintEnd_toEndOf="parent" // Add this line to specify end (right) constraint
+
+    <!-- Add your TextView and Spinner views here dynamically using code -->
+
+</LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintVertical_bias="0.906" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
